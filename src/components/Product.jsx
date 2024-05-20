@@ -1,33 +1,53 @@
 import React from 'react'
-import ProductData from './ProductData'
 import './Product.css'
+import { CartState } from '../context/Context'
+import SingleProduct from './SingleProduct';
+import Filters from './Filters';
 
-const Product = () => {
+const Product = ({}) => {
+
+  const { 
+    state: { products },
+    productState: { sort, byStock, byFastDelivery, searchQuery },
+  } = CartState();
+
+  const transformProducts = () => {
+    let sortedProducts = products;
+
+    if(sort){
+      sortedProducts = sortedProducts.sort((a,b) => (
+        sort === 'lowToHigh' ? a.price - b.price : b.price - a.price
+      ))
+    }
+
+    if(!byStock){
+      sortedProducts = sortedProducts.filter((prod) => prod.inStock);
+    }
+
+    if(byFastDelivery){
+      sortedProducts = sortedProducts.filter((prod) => prod.byFastDelivery);
+    }
+
+    if(searchQuery){
+      sortedProducts = sortedProducts.filter((prod) =>
+        prod.name.toLowerCase().includes(searchQuery)
+      );
+    }
+
+    return sortedProducts;
+  }
+
   return (
-    <>
-      <div className='container-4'>
-        {
-            ProductData.map((curElm) => {
-                return (
-                  <>
-                    <div className="card">
-                      <div className="img-box">
-                        <img className='product-img' src={curElm.img} alt={curElm.Title}></img>
-                      </div>
-                      <div className="detail">
-                        <div className="info">
-                          <p className='shoe-name'>{curElm.Title}</p>
-                          <p className='price'>INR {curElm.Price}</p>
-                        </div>
-                        <button onClick={() => onAddToCart(curElm.id)}>Add to cart</button>
-                      </div>
-                    </div>
-                  </>
-                );
-            })
-        }
-      </div> 
-    </>
+    <div className='product'>
+       <Filters/>
+       <div className='productContainer'>
+       {
+        transformProducts().map((prod) => {
+          return <SingleProduct prod ={ prod } key={ prod.id } />
+        })
+       }
+       </div>
+    </div>
   )
 }
 

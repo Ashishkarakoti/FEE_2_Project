@@ -17,25 +17,25 @@ const Contact = () => {
             <div className='input-row'>
               <div className='input-group'>
                 <label>Name</label>
-                <input type='text' placeholder='Example'></input>
+                <input type='text'></input>
               </div>
               <div className='input-group'>
                 <label>Phone</label>
-                <input type='text' placeholder='+91 7710998832'></input>
+                <input type='text'></input>
               </div>
             </div>
             <div className='input-row'>
               <div className='input-group'>
                 <label>Email</label>
-                <input type='email' placeholder='example@gmail.com'></input>
+                <input type='email'></input>
               </div>
               <div className='input-group'>
                 <label>Subject</label>
-                <input type='text' placeholder='Project Demo'></input>
+                <input type='text'></input>
               </div>
             </div>
             <label>Message</label>
-            <textarea rows={5} placeholder='Your Message'></textarea>
+            <textarea rows={5}></textarea>
             <button className='submit-btn' type='submit'>SEND</button>
           </form>
         </div>

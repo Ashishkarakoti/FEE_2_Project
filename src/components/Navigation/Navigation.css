@@ -37,12 +37,20 @@ ul li{
 }
 
 .link:hover{
+    text-decoration: none;
     transition: none;
+    color: black;
     border-bottom: 3px solid black;
 }
 
 div .btn{
-    padding-right: 70px;
+    display: flex;
+    padding-right: 60px;
+    align-items: center;
+}
+
+.search{
+    padding-right: 10px;
 }
 
 .login{
@@ -68,5 +76,11 @@ div .btn{
 }
 
 .contact:hover{
+    color: red;
     border-bottom: 3px red solid;
+} 
+
+.midnav{
+    display: flex;
 }
+

@@ -28,7 +28,7 @@ const Login = () => {
             <div className='input-row'>
               <div className='input-group'>
                 <label>Email</label>
-                <input type='email' placeholder='example@example.com'></input>
+                <input type='email'></input>
               </div>
             </div>
             <div className='input-row'>

@@ -9,6 +9,7 @@
     margin: 0;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+    list-style: none;
 }
 
 body{

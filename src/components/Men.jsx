@@ -2,11 +2,11 @@ import React from 'react'
 import AdiclubSlider from './AdiclubSlider'
 import Product from './Product'
 
-const Men = () => {
+const Men = ({addToCart}) => {
   return (
     <div>
       <AdiclubSlider/>
-      <Product/>
+      <Product addToCart={addToCart} />
     </div>
   )
 }

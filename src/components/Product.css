@@ -1,49 +1,43 @@
-.container-4{
+.product{
     display: flex;
+}
+
+.productContainer{
+    display: flex;
+    width: 78%;
+    padding: 20px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px 0px;
-    padding-bottom: 100px;
-    width: 100%;
-    font-size: 14px;
+    justify-content: space-around;
 }
 
-.card:hover{
-    border: 1px solid black;
-}
-
-.product-img{
-    width: 320px;
-}
-
-.detail{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 2px;
-}
-
-.detail .shoe-name{
-    font-weight: 400;
-}
-
-.detail .price{
-    font-weight: 200;
-    color: red;
-}
-
-.detail button{
-    all: unset;
-    cursor: pointer;
-    align-items: center;
-    font-weight: 600;
-    color: whitesmoke;
-    height: 40px;
-    padding: 0px 10px;
+.filters {
     background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 20%;
+    margin-top: 30px;
+    margin-left: 40px;
+    /* margin: 20px; */
+    height: 60vh;
+    border-radius: 10px;
 }
 
-.detail button:hover{
-    color: grey;
-    transition: 0.2s ease-in-out;
+.filters > span {
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.products {
+    width: 30%;
+    margin: 10px;
+}
+
+.summary {
+    width: 30%;
 }
